@@ -1,10 +1,17 @@
 from flask import Flask
+from routes import api
+
 
 app = Flask(__name__)
 
+
+app.register_blueprint(api)
+
+
 @app.route("/")
 def home():
-    return "Three Tier Application Backend Running"
+    return "Backend Running Successfully"
+
 
 if __name__ == "__main__":
     app.run(debug=True)
